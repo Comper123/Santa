@@ -1,12 +1,16 @@
-body{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(53, 64, 84);
     position: relative;
+    z-index: -10000;
     overflow: hidden;
     background-size:cover;
     height: 100vh;
@@ -18,8 +22,9 @@ body{
     background-image: url(img/snow1.png);
     position:absolute;
     width: 100%;
-     height:100%;
-     animation: snow1 36s linear infinite;    
+    height:100%;
+    animation: snow1 36s linear infinite;
+    z-index: -2;
  }
 
  .snow2{
@@ -28,12 +33,14 @@ body{
     width: 100%;
     height: 100%;
     position:absolute;
+    z-index: -2;
 }   
 
 @keyframes snow2{
     0%{background-position: 0 0, 0 0;}
     100%{background-position: 10% 600px, 10% 600px;}
 }
+
 @keyframes snow1{
     from{background-position: 0 -300px;}
     20% {background-position: 20% -100px;}
@@ -49,20 +56,164 @@ body{
         align-items: center;
         flex-direction: column;
         position: absolute;
+        justify-content: center;
+        z-index: 1;
+        
         h1{
             color: white;
             font-size: 42px;
             font-family: "Caveat", serif;
             font-weight: 800;
+            margin-bottom: 30px;
+        }
+        img{
+            width: 80%;
+            aspect-ratio: 1;
+            margin: 50px 0 ;
         }
         .help_text{
             color: white;
             font-weight: 600;
-            margin-top: 50px;
+            margin-top: 10px;
+            margin-bottom: 10px;
             font-size: 20px;
             text-align: center;
             text-wrap: wrap;
             max-width: 80%;
+        }
+        input{
+            width: 70%;
+            height: 30px;
+            font-size: 22px;
+            padding-left: 10px;
+            border-radius: 8px;
+            border: 1px solid rgb(108, 103, 103);
+            &:focus{
+                outline: none;
+            }
+        }
+        .error{
+            display: none;
+            background-color: rgba(250, 36, 36, 0.305);
+            color: rgba(250, 36, 36, 1);
+            width: 50%;
+            border-radius: 8px;
+            text-align: center;
+            padding: 12px 20px;
+        }
+        #start_btn{
+            margin-top: 10px;
+            /* height: 30px; */
+            border-radius: 8px;
+            padding: 12px 40px;
+            text-align: center;
+            background-color: blueviolet;
+            color: white;
+            font-size: 22px;
+            font-weight: 500;
+        }
+    }
+    .task{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        flex-direction: column-reverse;
+        position: absolute;
+        z-index: -2;
+        justify-content: center;
+        h1{
+            color: white;
+            font-size: 42px;
+            font-family: "Caveat", serif;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+        .error{
+            display: none;
+            background-color: rgba(250, 36, 36, 0.305);
+            color: rgba(250, 36, 36, 1);
+            width: 80%;
+            border-radius: 8px;
+            text-align: center;
+            padding: 12px 20px;
+            margin-bottom: 30px;
+        }
+        input{
+            width: 70%;
+            height: 30px;
+            font-size: 22px;
+            padding-left: 10px;
+            border-radius: 8px;
+            border: 1px solid rgb(108, 103, 103);
+            &:focus{
+                outline: none;
+            }
+        }
+        #ans_btn{
+            margin-top: 10px;
+            /* height: 30px; */
+            border-radius: 8px;
+            padding: 12px 40px;
+            text-align: center;
+            background-color: blueviolet;
+            color: white;
+            font-size: 22px;
+            font-weight: 500;
+        }
+        img{
+            max-width: 80%;
+            object-fit: cover;
+            max-height: 300px;
+            margin: 20px auto;
+        }
+        h2{
+            color: white;
+            max-width: 80%;
+            text-align: center;
+            text-wrap: wrap;
+            font-size: 34px;
+            margin-bottom: 30px;
+            font-family: "Caveat", serif;
+        }
+    }
+    .qr{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        z-index: -2;
+        h1{
+            color: white;
+            font-size: 32px;
+            width: 80%;
+            text-align: center;
+            text-wrap: wrap;
+            font-family: "Caveat", serif;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            margin: 20px 0;
+            
+        }
+        a{
+            margin-top: 10px;
+            border-radius: 8px;
+            padding: 12px 40px;
+            text-align: center;
+            background-color: blueviolet;
+            color: white;
+            font-size: 22px;
+            font-weight: 500;
+            text-decoration: none;
         }
     }
 }

@@ -14,11 +14,28 @@
 <body>
     <div class="snow1"></div>
     <div class="snow2"></div>
+
     <section class="main">
         <h1>Тайный санта</h1>
+        <img src="img/santa.png" alt="">
+        <p class="error" id="error">Неверный код! Попробуйте еще раз</p>
         <p class="help_text">Введите ваш код</p>
-        <input type="text">
+        <input type="text" id="user_id">
+        <a id="start_btn">Начать</a>
     </section>
+
+    <section class="task">
+        <a id="ans_btn">Ответить</a>
+        <input type="text" id="answer">
+        <p class="error" id="task_error">Неверно, попробуйте снова!</p>
+    </section>
+
+    <section class="qr">
+        <h1>Вы успешно выполнили задание! Это ваша часть ответа:</h1>
+        <img src="" alt="" id="qr_code">
+        <a href="">На главную</a>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
