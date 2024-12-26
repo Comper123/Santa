@@ -15,7 +15,7 @@ var is_start = false;
 
 var keys = ["001", "002", "003", "004",
             "005", "006", "007", "008",
-            "009", "010", "011"
+            "009", "010", "011", "012"
 ]
 
 
@@ -39,6 +39,7 @@ start_btn.addEventListener("click", () => {
             else if (value == "009"){game9()}
             else if (value == "010"){game10()}
             else if (value == "011"){game11()}
+            else if (value == "012"){game12()}
         }
         else {
             // Отображаем ошибку
@@ -356,6 +357,36 @@ function game11(){
         if (ans.toLowerCase() === "шуба"){
             task.removeChild(h2);
             win(11);
+        } else {
+            // Отображаем ошибку
+            error_task.style.display = "block";
+            setTimeout(() => {
+                error_task.style.display = "none";
+            }, 3000);
+        }
+    });
+}
+
+
+// Игра 12. Ребус
+function game12(){
+    startgame();
+
+    rebus = document.createElement("img");
+    rebus.setAttribute("src", "img/tasks/12.png");
+    task.appendChild(rebus);
+
+    h2 = document.createElement("h2");
+    h2.innerText = "Разгадайте ребус:";
+    task.appendChild(h2);
+
+    ans_btn.addEventListener("click", () => {
+        // Проверяю ответы
+        ans = ans_text.value
+        if (ans.toLowerCase() === "узор"){
+            task.removeChild(rebus);
+            task.removeChild(h2);
+            win(12);
         } else {
             // Отображаем ошибку
             error_task.style.display = "block";
